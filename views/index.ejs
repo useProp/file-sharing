@@ -8,10 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <% if (locals.fileLink !== null) { %>
+    <% if (locals.fileLink) { %>
         <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
-            Your file is uploaded: &#10240;
-            <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+            <form method='post' action="<%= locals.fileLink %>">
+                Your file is uploaded: &#10240;
+                <button type="submit"><%= locals.fileLink %></button>
+            </form>
         </div>
     <% } %>
     <form
